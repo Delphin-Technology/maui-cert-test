@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCertTest.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="MAUI Certificate Test!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Editor
+                x:Name="FetchResult"
+                HeightRequest="150"
+                SemanticProperties.Description="Result of fetching the URL with self signed certificate"
+                HorizontalOptions="Fill"/>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click to fetch https://self-signed.badssl.com/" 
+                SemanticProperties.Hint="Fetches https://self-signed.badssl.com/"
+                Clicked="FetchSelfSignedUrlClicked"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
